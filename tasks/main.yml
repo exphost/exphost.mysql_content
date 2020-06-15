@@ -5,7 +5,7 @@
     login_password: "{{mysql_password}}"
     login_host: "{{mysql_host}}"
     login_port: "{{mysql_port}}"
-  loop: "{{content.dbs|dict2items}}"
+  loop: "{{content.dbs|default({})|dict2items}}"
 
 - name: create users
   mysql_user:
@@ -18,4 +18,4 @@
     login_password: "{{mysql_password}}"
     login_host: "{{mysql_host}}"
     login_port: "{{mysql_port}}"
-  loop: "{{content.users|dict2items}}"
+  loop: "{{content.users|default({})|dict2items}}"
