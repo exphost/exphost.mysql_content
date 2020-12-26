@@ -1,0 +1,27 @@
+apps_mysql1:
+  my_db:
+    mysql:
+      enabled: True
+      type: exphost.mysql
+      install: standalone
+      configs:
+        port: 13306
+        pass: password0
+      user:
+        user: my_db
+        uid: "502"
+      content:
+        dbs:
+          db1:
+          db2:
+        users:
+          u1:
+            privs:
+              - "db1.*:ALL"
+            pass: password1
+          u2:
+          u3:
+            privs:
+              - "db1.*:ALL"
+              - "db2.*:ALL"
+            pass: password3
