@@ -13,6 +13,7 @@ apps_mysql1:
       content:
         dbs:
           db1:
+            encoding: utf8
           db2:
         users:
           u1:

@@ -2,6 +2,7 @@
 - name: create databases
   mysql_db:
     name: "{{ item.key }}"
+    encoding: "{{ item.value.encoding | default(omit) }}"
     login_user: "{{ mysql_user }}"
     login_password: "{{ mysql_password }}"
     login_host: "{{ mysql_host }}"
